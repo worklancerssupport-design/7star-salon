@@ -20,6 +20,7 @@ export interface ServiceCategory {
   services: ServiceItem[];
   subCategories?: ServiceSubCategory[];
   imageUrl?: string;
+  minPriceOverride?: number;
 }
 
 export const servicesData: ServiceCategory[] = [
@@ -28,9 +29,10 @@ export const servicesData: ServiceCategory[] = [
     id: "men-haircut",
     gender: "men",
     icon: "✂️",
-    title: "Hair Cut",
+    title: "Regular Hair Services",
     description: "Precision cuts, trims and shaving for every style preference",
     imageUrl: "https://cdn.shopify.com/s/files/1/0899/2676/2789/files/Classic_Crew_Cut.jpg?v=1730411406",
+    minPriceOverride: 150,
     services: [
       { name: "Trimming", price: 80 },
       { name: "Hair Cut Normal", price: 150 },
@@ -51,7 +53,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "🎨",
     title: "Hair Colouring",
     description: "Premium hair colour services using top international brands",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN77Xj73oyeqbfAwrmKs_x8qKe02BLiNcfa3DWj9Yssn59veLG2B6tcc4&s=10",
+    imageUrl: "https://i.pinimg.com/1200x/5d/bd/0e/5dbd0ea0383217c6059b967a95ac6469.jpg",
     services: [
       { name: "Garnier (No Ammonia)", price: 300 },
       { name: "Any Herbal", price: 200 },
@@ -68,6 +70,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "〰️",
     title: "Hair Straightening",
     description: "Professional hair straightening for smooth, sleek results",
+    imageUrl: "https://images.pexels.com/photos/7518760/pexels-photo-7518760.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Hair Straightening", price: 1500 },
     ],
@@ -175,6 +178,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "🔧",
     title: "Other",
     description: "Additional grooming and personal care services",
+    imageUrl: "https://images.pexels.com/photos/38167589/pexels-photo-38167589.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Warts & Pimple Removal", price: 50 },
       { name: "Ear Punching", price: 100 },
@@ -200,6 +204,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "🧴",
     title: "Oil Massage",
     description: "Premium oil treatments for healthy hair and scalp",
+    imageUrl: "https://images.pexels.com/photos/5659007/pexels-photo-5659007.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Rosemary Oil (Hair Re-Growth)", price: 700 },
       { name: "Almond Oil", price: 600 },
@@ -227,7 +232,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "🌿",
     title: "Hair Spa",
     description: "Nourishing hair spa treatments for healthy, shiny hair",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjV6ZP8ptn_0_dHqZLPFn2JxHr2C75KuBIu_fHtEsqwWL-P4rZRHofPUk&s=10",
+    imageUrl: "https://images.pexels.com/photos/7755680/pexels-photo-7755680.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Hair Spa Loreal", price: 1000 },
       { name: "Dandruff Control", price: 1200 },
@@ -241,6 +246,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "〰️",
     title: "Hair Straightening",
     description: "Professional straightening, curling and styling services",
+    imageUrl: "https://images.pexels.com/photos/3738341/pexels-photo-3738341.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Wash & Blow Dry", price: 500 },
       { name: "Hair Ironing", price: 500 },
@@ -297,6 +303,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "☀️",
     title: "Detan",
     description: "Sun tan removal and brightening treatments",
+    imageUrl: "https://images.pexels.com/photos/7446666/pexels-photo-7446666.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Face & Neck", price: 400 },
       { name: "Raaga Deten", price: 400 },
@@ -340,7 +347,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "🌸",
     title: "Waxing",
     description: "Smooth, gentle hair removal for every body area",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5IW5s1fmfNCWVZqRjv2aYlQyx_kBs5JXBDOrkxLJRoxuWfEeJ468LCHU&s=10",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJSPBNElvgCon0XUX5fDVB_a6r6hLOCqAVuXm9xV9RpSPHskST4hIay7o&s=10",
     services: [],
     subCategories: [
       {
@@ -371,6 +378,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "✨",
     title: "Bleach",
     description: "Professional lightening services for a brighter, even tone",
+    imageUrl: "https://breesindia.in/wp-content/uploads/2022/09/Untitled-Project-8.jpg",
     services: [],
     subCategories: [
       {
@@ -461,6 +469,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "👧",
     title: "Kids Cut",
     description: "Gentle, fun haircuts for young girls",
+    imageUrl: "https://images.pexels.com/photos/16098689/pexels-photo-16098689.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Mushroom Cut", price: 200 },
       { name: "Baby Cut", price: 200 },
@@ -477,6 +486,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "✂️",
     title: "Hair Cut",
     description: "Expert cuts for every hair length and texture",
+    imageUrl: "https://hips.hearstapps.com/hmg-prod/images/bob-haircuts-side-bangs-665a123b364ca.jpg?crop=1xw:0.833740234375xh;center,top",
     services: [
       { name: "Straight Cut", price: 150 },
       { name: "U Cut", price: 200 },
@@ -495,6 +505,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "🎨",
     title: "Hair Colouring",
     description: "Full spectrum of natural and premium hair colour",
+    imageUrl: "https://images.pexels.com/photos/3993323/pexels-photo-3993323.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Black Henna", price: 500 },
       { name: "Brown Henna", price: 600 },
@@ -510,6 +521,7 @@ export const servicesData: ServiceCategory[] = [
     icon: "👶",
     title: "Kids Hair Cut",
     description: "Gentle, fun haircuts for children in a comfortable environment",
+    imageUrl: "https://images.pexels.com/photos/19664862/pexels-photo-19664862.jpeg?auto=compress&cs=tinysrgb&w=800",
     services: [
       { name: "Boys Hair Cut (Below 5)", price: 99, duration: "20 min" },
       { name: "Boys Hair Cut (5–10 yrs)", price: 120, duration: "25 min" },

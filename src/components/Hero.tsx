@@ -17,7 +17,7 @@ const BG_IMAGES = [
 const INTERVAL = 4500;
 
 const stats = [
-  { value: "15+", label: "Years of Craft" },
+  { value: "25+", label: "Years of Craft" },
   { value: "12K+", label: "Happy Clients" },
   { value: "4.9★", label: "Google Rating" },
 ];
@@ -83,7 +83,11 @@ export default function Hero() {
           className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-body tracking-[0.22em] uppercase mb-8 shadow-xl"
         >
           <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
-          <span>Luxury Hair &amp; Beauty Studios</span>
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#C6A15B]/25 text-[#F0D9A8] font-semibold tracking-[0.14em]">
+            Since 2001
+          </span>
+          <span className="hidden sm:inline w-1.5 h-1.5 rounded-full bg-[#C6A15B]" />
+          <span className="hidden sm:inline">Luxury Hair &amp; Beauty Studios</span>
           <span className="w-1.5 h-1.5 rounded-full bg-[#C6A15B]" />
           <span className="text-[#FAF7F0]/90">4 Chennai Branches</span>
         </motion.div>

@@ -46,6 +46,7 @@ export default function Footer() {
                 alt="7Star Salon"
                 width={64}
                 height={52}
+                style={{ width: 64, height: 52 }}
                 className="mb-3"
               />
               <p className="font-heading font-bold text-lg text-white leading-none">7Star</p>

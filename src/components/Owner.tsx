@@ -10,9 +10,9 @@ export default function Owner() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" className="section" style={{ background: "#EEF5FA" }}>
+    <section id="owner" className="section" style={{ background: "#EEF5FA" }}>
       <div className="wrap">
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* Image */}
           <motion.div
@@ -31,8 +31,10 @@ export default function Owner() {
                 className="object-cover"
                 sizes="(max-width:1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0"
-                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.18), transparent)" }} />
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.18), transparent)" }}
+              />
             </div>
           </motion.div>
 
@@ -42,38 +44,33 @@ export default function Owner() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="label mb-3">Meet the Expert</p>
+            <p className="label mb-3">Meet the Owner</p>
             <h2 className="h-lg mb-1" style={{ color: "#234E70" }}>{ownerData.name}</h2>
             <p className="text-sm font-body mb-5" style={{ color: "#C6A15B" }}>{ownerData.title}</p>
-            <div className="rule rule-left mb-7" />
+            <div className="rule rule-left mb-8" />
 
-            <p className="text-sm font-body leading-[1.9] mb-9 max-w-md" style={{ color: "#6B7280" }}>
+            <ul className="space-y-3.5 mb-8">
+              {ownerData.facts.map((f) => (
+                <li
+                  key={f}
+                  className="flex items-start gap-3.5 text-sm font-body leading-[1.75]"
+                  style={{ color: "#6B7280" }}
+                >
+                  <span
+                    className="mt-2.5 shrink-0 block"
+                    style={{ width: "20px", height: "1.5px", background: "#C6A15B" }}
+                  />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p
+              className="text-base font-body italic leading-[1.85] max-w-md pl-5"
+              style={{ color: "#234E70", borderLeft: "2px solid #C6A15B" }}
+            >
               {ownerData.description}
             </p>
-
-            {/* Stats */}
-            <div className="flex gap-10 mb-10">
-              {[
-                { val: ownerData.experience, lbl: "Experience" },
-                { val: "12K+",               lbl: "Happy Clients" },
-                { val: "4.9★",               lbl: "Google Rating" },
-              ].map((s) => (
-                <div key={s.lbl}>
-                  <p className="font-heading font-bold text-3xl" style={{ color: "#234E70" }}>{s.val}</p>
-                  <p className="text-xs font-body mt-1 tracking-wide uppercase" style={{ color: "#9CA3AF" }}>{s.lbl}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Awards */}
-            <div className="space-y-2.5">
-              {ownerData.awards.slice(0, 3).map((a) => (
-                <div key={a} className="flex items-start gap-3 text-sm font-body" style={{ color: "#6B7280" }}>
-                  <span className="mt-1 shrink-0 text-xs" style={{ color: "#C6A15B" }}>—</span>
-                  {a}
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

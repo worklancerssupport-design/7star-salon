@@ -73,6 +73,7 @@ export default function Navbar() {
               alt="7Star Salon"
               width={46}
               height={37}
+              style={{ width: 46, height: 37 }}
               className="drop-shadow-sm"
               priority
             />

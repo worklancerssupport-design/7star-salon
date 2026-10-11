@@ -252,6 +252,7 @@ function catServiceCount(cat: ServiceCategory): number {
 }
 
 function catMinPrice(cat: ServiceCategory): number {
+  if (cat.minPriceOverride != null) return cat.minPriceOverride;
   if (cat.services.length > 0) return Math.min(...cat.services.map((s) => s.price));
   const rows = cat.subCategories?.flatMap((s) => s.rows) ?? [];
   const prices = rows.flatMap((r) => {

@@ -7,6 +7,7 @@ import Packages       from "@/components/Packages";
 import Bridal         from "@/components/Bridal";
 import Gallery        from "@/components/Gallery";
 import Testimonials   from "@/components/Testimonials";
+import Owner          from "@/components/Owner";
 import Map            from "@/components/Map";
 import Contact        from "@/components/Contact";
 import Footer         from "@/components/Footer";
@@ -25,6 +26,7 @@ export default function Home() {
         <WhyChooseUs />
         <Gallery />
         <Testimonials />
+        <Owner />
         <Map />
         <Contact />
       </main>

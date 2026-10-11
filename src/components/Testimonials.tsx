@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { testimonialsData } from "@/data/testimonials";
 
 function Stars({ n = 5 }: { n?: number }) {
@@ -131,6 +131,61 @@ export default function Testimonials() {
             >
               <ChevronRight className="w-4 h-4" />
             </button>
+          </div>
+        </div>
+
+        {/* Review us */}
+        <div className="flex justify-center mt-16">
+          <div
+            className="inline-flex flex-col sm:flex-row items-center gap-6 sm:gap-8 border bg-white p-6 sm:p-7"
+            style={{ borderColor: "#E5E7EB", borderRadius: "12px", maxWidth: "520px" }}
+          >
+            <a
+              href="https://g.page/r/CaYe88nFpdt4EAE/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Scan QR to leave a Google review"
+              className="shrink-0 block"
+            >
+              <div
+                className="relative bg-white p-1.5 border"
+                style={{ width: "120px", height: "120px", borderColor: "#E5E7EB", borderRadius: "8px" }}
+              >
+                <Image
+                  src="/review.png"
+                  alt="Google review QR code"
+                  fill
+                  className="object-contain"
+                  sizes="120px"
+                />
+              </div>
+            </a>
+
+            <div className="text-center sm:text-left">
+              <p className="label mb-2">Review Us</p>
+              <h3
+                className="font-heading font-semibold text-lg mb-1.5"
+                style={{ color: "#234E70" }}
+              >
+                Loved your visit?
+              </h3>
+              <p
+                className="text-sm font-body leading-relaxed mb-4"
+                style={{ color: "#6B7280" }}
+              >
+                Scan the QR or tap below to share your Google review.
+              </p>
+              <a
+                href="https://g.page/r/CaYe88nFpdt4EAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost inline-flex items-center gap-2 text-xs"
+                style={{ color: "#234E70", borderColor: "#234E70" }}
+              >
+                Leave a Google Review
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
