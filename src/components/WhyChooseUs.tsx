@@ -16,6 +16,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { contactData } from "@/data/contact";
+import { shopTimings } from "@/data/timings";
 import { WhatsAppIcon } from "./SocialIcons";
 
 const SEO_SERVICES = [
@@ -76,7 +77,7 @@ const FAQS = [
   },
   {
     q: "How can I book an appointment at 7Star Salon Velachery?",
-    a: "You can book instantly by calling us at +91 98414 18413 or messaging our WhatsApp desk. Walk-in appointments are also warmly welcomed throughout our business hours from 9:00 AM to 9:00 PM daily.",
+    a: `You can book instantly by calling us at +91 98414 18413 or messaging our WhatsApp desk. Walk-in appointments are also warmly welcomed throughout our business hours — ${shopTimings.mens.label} ${shopTimings.mens.range.open} to ${shopTimings.mens.range.close} and ${shopTimings.womens.label} ${shopTimings.womens.range.open} to ${shopTimings.womens.range.close}, every day.`,
   },
   {
     q: "What hair smoothening and keratin treatments do you provide?",

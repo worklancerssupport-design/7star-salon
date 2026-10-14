@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { schemaOpeningHours } from "@/data/timings";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -96,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "Adyar",
                 "Chennai",
               ],
-              openingHours: ["Mo-Fr 09:00-21:00", "Sa 09:00-22:00", "Su 10:00-20:00"],
+              openingHours: schemaOpeningHours(),
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.9",

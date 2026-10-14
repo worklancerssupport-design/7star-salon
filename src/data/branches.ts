@@ -1,3 +1,5 @@
+import type { GenderScope } from "./timings";
+
 export interface BranchImage {
   src: string;
   alt: string;
@@ -7,6 +9,7 @@ export interface Branch {
   id: string;
   name: string;
   location: string;
+  scope: GenderScope;
   cover: string;
   images: BranchImage[];
 }
@@ -16,6 +19,7 @@ export const branchesData: Branch[] = [
     id: "venus-colony-ext",
     name: "Venus Colony Ext.",
     location: "Star Family Beauty Salon, No.13, Near, 3rd St, Venus Colony, Velachery, Chennai, Tamil Nadu 600042",
+    scope: "unisex",
     cover: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
     images: [
       { src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1000&q=80", alt: "Venus Colony branch interior" },
@@ -28,6 +32,7 @@ export const branchesData: Branch[] = [
     id: "vgp-seethapathy-nagar",
     name: "VGP Seethapathy Nagar",
     location: "Murphu7Star Men's Salon, No 5 murphy, Dass Ave, VGP Seethapathy Nagar, Velachery, Chennai, Tamil Nadu 600042",
+    scope: "mens",
     cover: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80",
     images: [
       { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80", alt: "VGP Seethapathy Nagar branch" },
@@ -40,6 +45,7 @@ export const branchesData: Branch[] = [
     id: "iit-m-campus",
     name: "IIT-M Campus",
     location: "7Star Unisex Salon, N0:4 SFC Near Gurunath Store Near Canara Bank ATM IIT CAMPUS, Chennai, Tamil Nadu 600036",
+    scope: "unisex",
     cover: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80",
     images: [
       { src: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1000&q=80", alt: "IIT-M branch exterior" },
@@ -52,6 +58,7 @@ export const branchesData: Branch[] = [
     id: "iitm-shopping-complex",
     name: "IIT-M Shopping Complex",
     location: "7 STAR LADIES BEAUTY SALOON, Shopping Center, Shop No.207, IIT.M",
+    scope: "womens",
     cover: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80",
     images: [
       { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1000&q=80", alt: "IITM Shopping Complex branch" },

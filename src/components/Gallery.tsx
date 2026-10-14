@@ -14,37 +14,33 @@ import {
 } from "lucide-react";
 import { branchesData, type Branch } from "@/data/branches";
 import { contactData } from "@/data/contact";
+import { formatRange, getTimingsForScope, timingsDaysLabel } from "@/data/timings";
 
 // Specialized metadata for each branch to make the text-only layout informative and rich
 const BRANCH_METADATA: Record<string, {
   type: string;
   badgeColor: string;
   features: string[];
-  timing: string;
 }> = {
   "venus-colony-ext": {
     type: "Family Beauty Salon",
     badgeColor: "#234E70",
     features: ["Men & Women", "Bridal Studio", "Hair Spa", "Skin Care"],
-    timing: "9:00 AM – 9:00 PM",
   },
   "vgp-seethapathy-nagar": {
     type: "Men's Luxury Grooming",
     badgeColor: "#1A365D",
     features: ["Precision Fades", "Beard Styling", "Detan & Facials", "Hair Treatments"],
-    timing: "9:00 AM – 10:00 PM",
   },
   "iit-m-campus": {
     type: "Campus Unisex Studio",
     badgeColor: "#2C5282",
     features: ["Unisex Salon", "Trendy Cuts", "Balayage & Color", "Student Friendly"],
-    timing: "9:00 AM – 9:00 PM",
   },
   "iitm-shopping-complex": {
     type: "Ladies Beauty Saloon",
     badgeColor: "#744210",
     features: ["Bridal Artistry", "Waxing & Threading", "Facials & Cleanups", "Hair Smoothening"],
-    timing: "9:30 AM – 8:30 PM",
   },
 };
 
@@ -54,8 +50,9 @@ function BranchTextCard({ branch, index }: { branch: Branch; index: number }) {
     type: "Salon & Spa Studio",
     badgeColor: "#234E70",
     features: ["Hair Styling", "Skin Care", "Grooming", "Bridal"],
-    timing: "9:00 AM – 9:00 PM",
   };
+
+  const branchTimings = getTimingsForScope(branch.scope);
 
   const [copied, setCopied] = useState(false);
 
@@ -118,9 +115,19 @@ function BranchTextCard({ branch, index }: { branch: Branch; index: number }) {
         </h3>
 
         {/* Hours */}
-        <div className="flex items-center gap-2 text-xs font-body text-[#6B7280] mb-4">
-          <Clock className="w-3.5 h-3.5 text-[#C6A15B] shrink-0" />
-          <span>{meta.timing} · Open Everyday</span>
+        <div className="flex items-start gap-2 text-xs font-body text-[#6B7280] mb-4">
+          <Clock className="w-3.5 h-3.5 text-[#C6A15B] shrink-0 mt-0.5" />
+          <div className="flex-1 space-y-1">
+            {branchTimings.map((t) => (
+              <div key={t.key} className="flex justify-between gap-3">
+                <span className="text-[#9CA3AF]">{t.label}</span>
+                <span className="font-medium text-[#4B5563]">{formatRange(t.range)}</span>
+              </div>
+            ))}
+            <p className="text-[10px] uppercase tracking-[0.15em] text-[#9CA3AF] pt-0.5">
+              Open {timingsDaysLabel}
+            </p>
+          </div>
         </div>
 
         {/* Divider */}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { InstagramIcon, FacebookIcon, YoutubeIcon, TwitterIcon } from "./SocialIcons";
 import { contactData } from "@/data/contact";
+import { formatRange, getTimingsForScope, timingsDaysLabel } from "@/data/timings";
 
 const quickLinks = [
   { label: "Services",   href: "#services"   },
@@ -20,11 +21,12 @@ const socials = [
   { icon: TwitterIcon,   href: contactData.social.twitter,   label: "Twitter"   },
 ];
 
-const hours = [
-  { day: "Mon – Fri", time: "9:00 AM – 9:00 PM"  },
-  { day: "Saturday",  time: "9:00 AM – 10:00 PM" },
-  { day: "Sunday",    time: "10:00 AM – 8:00 PM"  },
-];
+const genderTimings = getTimingsForScope("unisex");
+
+const hours = genderTimings.map((t) => ({
+  day: t.label,
+  time: formatRange(t.range),
+}));
 
 export default function Footer() {
   const go = (href: string) =>
@@ -161,6 +163,9 @@ export default function Footer() {
               Business Hours
             </h4>
             <div className="space-y-3">
+              <p className="text-[10px] font-body uppercase tracking-[0.2em]" style={{ color: "rgba(255,255,255,0.25)" }}>
+                {timingsDaysLabel}
+              </p>
               {hours.map((h) => (
                 <div key={h.day} className="flex justify-between gap-4">
                   <span className="text-xs font-body" style={{ color: "rgba(255,255,255,0.35)" }}>{h.day}</span>
@@ -173,7 +178,7 @@ export default function Footer() {
             <div className="mt-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full" style={{ background: "#22C55E" }} />
               <span className="text-xs font-body" style={{ color: "rgba(255,255,255,0.4)" }}>
-                Open today until 9:00 PM
+                Open today · {genderTimings.map((t) => `${t.label} until ${t.range.close}`).join(" · ")}
               </span>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Phone, Navigation } from "lucide-react";
 import { contactData } from "@/data/contact";
+import { formatRange, getTimingsForScope, timingsDaysLabel } from "@/data/timings";
 
 export default function Map() {
   const ref   = useRef(null);
@@ -69,14 +70,13 @@ export default function Map() {
 
             {/* Hours */}
             <div className="border-t pt-6 space-y-2.5" style={{ borderColor: "#E5E7EB" }}>
-              {[
-                { d: "Mon – Fri",  h: "9:00 AM – 9:00 PM" },
-                { d: "Saturday",   h: "9:00 AM – 10:00 PM" },
-                { d: "Sunday",     h: "10:00 AM – 8:00 PM" },
-              ].map((row) => (
-                <div key={row.d} className="flex justify-between gap-4">
-                  <span className="text-xs font-body" style={{ color: "#9CA3AF" }}>{row.d}</span>
-                  <span className="text-xs font-body font-medium" style={{ color: "#1F2937" }}>{row.h}</span>
+              <p className="text-[10px] font-body uppercase tracking-[0.2em]" style={{ color: "#9CA3AF" }}>
+                {timingsDaysLabel}
+              </p>
+              {getTimingsForScope("unisex").map((t) => (
+                <div key={t.key} className="flex justify-between gap-4">
+                  <span className="text-xs font-body" style={{ color: "#9CA3AF" }}>{t.label}</span>
+                  <span className="text-xs font-body font-medium" style={{ color: "#1F2937" }}>{formatRange(t.range)}</span>
                 </div>
               ))}
             </div>

@@ -22,15 +22,6 @@ export const contactData = {
     youtube: "https://youtube.com/@7starsalon",
     twitter: "https://twitter.com/7starsalon",
   },
-  hours: [
-    { day: "Monday", open: "9:00 AM", close: "9:00 PM", isOpen: true },
-    { day: "Tuesday", open: "9:00 AM", close: "9:00 PM", isOpen: true },
-    { day: "Wednesday", open: "9:00 AM", close: "9:00 PM", isOpen: true },
-    { day: "Thursday", open: "9:00 AM", close: "9:00 PM", isOpen: true },
-    { day: "Friday", open: "9:00 AM", close: "9:00 PM", isOpen: true },
-    { day: "Saturday", open: "9:00 AM", close: "10:00 PM", isOpen: true },
-    { day: "Sunday", open: "10:00 AM", close: "8:00 PM", isOpen: true },
-  ],
   mapEmbed:
     "https://maps.google.com/maps?q=" +
     encodeURIComponent(
